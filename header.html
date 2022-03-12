@@ -37,11 +37,15 @@
         @page {
             size: landscape;
             margin: 2.5mm;
+
+            @bottom-right {
+                content: "Page " counter(page) " of " counter(pages);
+            }
         }
 
         img {
-            width: 30px;
-            height: 20px;
+            width: 150px;
+            height: 130px;
             float: left;
         }
 
@@ -59,12 +63,14 @@
         th {
             font-family: Merriweather-Bold;
             font-size: 12px;
-            background-color: LightGray
+            background-color: LightGray;
         }
 
         tr:nth-child(even) {
-            background-color: coral
+            background-color: coral;
         }
+
+        
 
         td {
             font-size: 12px;
@@ -75,12 +81,16 @@
             text-align: left;
             font-weight: unset;
             padding-left: 5px;
+     
         }
 
         address {
+            text-align: right;
+            display: inline-block;
             font-size: 18px;
-          
+            font-family:QuattrocentoSans-Regular;
             color: green;
+            float: right;
         }
     </style>
 
@@ -89,14 +99,14 @@
 
 </head>
 
-<img src=  "mt940_configuration/image.png">
+<img src=  "image.png">
 
 <address>
-    contact us at: 0202263000<br>
+    contact us at: 020-226-3000<br>
     <br>
-    mail us: <a href= "mailto:info@equitybank.co.ke""</a></a><br>
+    mailto:info@equitybank.co.ke <br>
     <br>
-    web visit:<a href="https://www.equitybank.co.ke"</a><br>
+    web visit: https://www.equitybank.co.ke <br>
     <br>
 
 </address>

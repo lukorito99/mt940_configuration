@@ -155,12 +155,19 @@ namespace mt940_configuration
                     wr.Close();
 
 
-                    using (FileStream stream = new FileStream(svd.FileName + ".pdf", FileMode.Create))
+                    using (FileStream stream = new FileStream(svd.FileName , FileMode.Create))
                     {
-                        createPdf("mt940_configuration", "full_table.html", svd.FileName);
 
-                        MessageBox.Show("File :" + svd.FileName + " successfully saved!");
+                       
+                            createPdf("mt940_configuration", "full_table.html", svd.FileName+".pdf");
 
+
+
+                        this.ControlBox = false;
+                        MessageBox.Show("File :" + svd.FileName+".pdf" + " successfully saved!");
+
+                        export_as.Enabled = true;
+                        this.ControlBox = true;
                     }
             }
 
@@ -168,11 +175,16 @@ namespace mt940_configuration
                 {
 
                     svd.Filter = "csv files | *.csv";
-                    using (FileStream stream = new FileStream(svd.FileName + ".csv", FileMode.Create))
+                    using (FileStream stream = new FileStream(svd.FileName  , FileMode.Create))
                     {
-                        File.WriteAllText(svd.FileName, File.ReadAllText("mt_with_possible_changes.csv"));
 
-                        MessageBox.Show("File :" + svd.FileName + " successfully saved!");
+                     
+                            File.WriteAllText(svd.FileName+".csv", File.ReadAllText("mt_with_possible_changes.csv"));
+
+                        this.ControlBox = false;
+                        MessageBox.Show("File :" + svd.FileName+".csv" + " successfully saved!");
+                        export_as.Enabled = true;
+                        this.ControlBox = true;
                     }
 
                 }
@@ -180,14 +192,23 @@ namespace mt940_configuration
                 if (opt == "xlsx")
                 {
                     svd.Filter = "Excel workbook | *.xlsx";
-                    using (FileStream stream = new FileStream(svd.FileName + ".xlsx", FileMode.Create))
+                    using (FileStream stream = new FileStream(svd.FileName, FileMode.Create))
                     {
+
                         XLWorkbook wb = new XLWorkbook();
 
                         wb.Worksheets.Add((DataTable)mt_dataGrid.DataSource, "STATEMENT");
-                        wb.SaveAs(svd.FileName);
 
-                        MessageBox.Show("File :" + svd.FileName + " successfully saved!");
+                        wb.SaveAs(svd.FileName + ".xlsx");
+
+                        this.ControlBox = false;
+
+                        MessageBox.Show("File :" + svd.FileName+".xlsx" + " successfully saved!");
+
+                        export_as.Enabled = true;
+
+
+                        this.ControlBox = true;
                     }
                     
 
@@ -272,12 +293,9 @@ namespace mt940_configuration
 
                     scope.Exec(File.ReadAllText("parse_st.py"));
 
-
+                
                 }
                 mt_dataGrid.DataSource = ReadCsvFile("mt_in_csv.csv");
-
-
-              
 
 
             }
@@ -302,7 +320,7 @@ namespace mt940_configuration
         private void export_as_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            export_as.Enabled = false;
+           
             link.Enabled = true;
             cancel.Enabled = true;
             grid_row_delete.Enabled = false;
@@ -318,6 +336,7 @@ namespace mt940_configuration
                 {
                     save_file("pdf");
                     grid_row_delete.Enabled = true;
+                    
 
                 }
 
@@ -337,6 +356,7 @@ namespace mt940_configuration
 
                 }
             }
+            export_as.Enabled = false;
         }
 
         private void cancel_request_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

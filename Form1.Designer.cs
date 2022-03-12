@@ -40,7 +40,6 @@ namespace mt940_configuration
             this.or = new System.Windows.Forms.TextBox();
             this.cancel = new System.Windows.Forms.LinkLabel();
             this.export_as = new System.Windows.Forms.ComboBox();
-            this.rt = new System.Windows.Forms.RichTextBox();
             this.labelexp = new System.Windows.Forms.Label();
             this.cancel_request = new System.Windows.Forms.LinkLabel();
             this.mt_panel = new System.Windows.Forms.Panel();
@@ -164,14 +163,6 @@ namespace mt940_configuration
             this.export_as.TabIndex = 18;
             this.export_as.SelectedIndexChanged += new System.EventHandler(this.export_as_SelectedIndexChanged);
             // 
-            // rt
-            // 
-            this.rt.Location = new System.Drawing.Point(18, 483);
-            this.rt.Name = "rt";
-            this.rt.Size = new System.Drawing.Size(191, 96);
-            this.rt.TabIndex = 20;
-            this.rt.Text = "";
-            // 
             // labelexp
             // 
             this.labelexp.AutoSize = true;
@@ -205,7 +196,6 @@ namespace mt940_configuration
             this.mt_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.mt_panel.Controls.Add(this.cancel_request);
             this.mt_panel.Controls.Add(this.labelexp);
-            this.mt_panel.Controls.Add(this.rt);
             this.mt_panel.Controls.Add(this.export_as);
             this.mt_panel.Controls.Add(this.cancel);
             this.mt_panel.Controls.Add(this.or);
@@ -367,7 +357,6 @@ namespace mt940_configuration
         private System.Windows.Forms.TextBox or;
         private System.Windows.Forms.LinkLabel cancel;
         private System.Windows.Forms.ComboBox export_as;
-        private System.Windows.Forms.RichTextBox rt;
         private System.Windows.Forms.Label labelexp;
         private System.Windows.Forms.LinkLabel cancel_request;
         private System.Windows.Forms.Panel mt_panel;
