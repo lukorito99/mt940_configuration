@@ -3,14 +3,14 @@ import mt940
 
 import pyodbc
 
-#def pass_to_db():
-#    details = dict()
-#    details['server'] = 'luko-melo99.database.windows.net'
-#    details['database'] = 'MT_CUSTOMER_DATA'
-#    details['username'] = 'team_admin'
-#    details['password'] = 'salmar#22'
+def pass_to_db():
+    details = dict()
+    details['server'] = 'luko-melo99.database.windows.net'
+    details['database'] = 'MT_CUSTOMER_DATA'
+    details['username'] = 'team_admin'
+    details['password'] = 'salmar#22'
 
-#    return details
+    return details
 
 
 def mt_extract():
@@ -20,11 +20,15 @@ def mt_extract():
         pre_statement=[
             mt940.processors.add_currency_pre_processor('USD'),
         ],
+        pre_opening_balance=[
+            mt940.processors.add_currency_pre_processor('USD'),
+        ],
     ))
 
-    with open('mt_940.txt',"r") as f:
-        data = f.read()
-
+  
+    with open('mt_940.txt','r') as f:
+           data = f.read()
+                      
     transactions.parse(data)
     transaction_data_one_set = dict()
     count = 0

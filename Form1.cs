@@ -20,6 +20,7 @@ namespace mt940_configuration
         public mt_home()
         {
             InitializeComponent();
+                     
 
         }
 
@@ -164,8 +165,12 @@ namespace mt940_configuration
 
 
                         this.ControlBox = false;
-                        MessageBox.Show("File :" + svd.FileName+".pdf" + " successfully saved!");
-
+                        MessageBox.Show("File :" + svd.FileName + ".pdf successfully saved!");
+                        if (MessageBox.Show("Do you want to view the Pdf file?", "Pdf file has been created", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        {
+                            
+                            System.Diagnostics.Process.Start(svd.FileName + ".pdf");
+                        }
                         export_as.Enabled = true;
                         this.ControlBox = true;
                     }
@@ -175,14 +180,21 @@ namespace mt940_configuration
                 {
 
                     svd.Filter = "csv files | *.csv";
-                    using (FileStream stream = new FileStream(svd.FileName  , FileMode.Create))
+                    using (FileStream stream = new FileStream(svd.FileName , FileMode.Create))
                     {
 
                      
-                            File.WriteAllText(svd.FileName+".csv", File.ReadAllText("mt_with_possible_changes.csv"));
+                        File.WriteAllText(svd.FileName + ".csv", File.ReadAllText("mt_with_possible_changes.csv"));
 
                         this.ControlBox = false;
-                        MessageBox.Show("File :" + svd.FileName+".csv" + " successfully saved!");
+                        MessageBox.Show("File :" + svd.FileName + ".csv successfully saved!");
+
+                        if (MessageBox.Show("Do you want to view the CSV file?", "CSV file has been created", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        {
+
+                            System.Diagnostics.Process.Start(svd.FileName + ".csv");
+                        }
+
                         export_as.Enabled = true;
                         this.ControlBox = true;
                     }
@@ -192,18 +204,25 @@ namespace mt940_configuration
                 if (opt == "xlsx")
                 {
                     svd.Filter = "Excel workbook | *.xlsx";
-                    using (FileStream stream = new FileStream(svd.FileName, FileMode.Create))
+                    using (FileStream stream = new FileStream(svd.FileName , FileMode.Create))
                     {
 
                         XLWorkbook wb = new XLWorkbook();
 
                         wb.Worksheets.Add((DataTable)mt_dataGrid.DataSource, "STATEMENT");
 
+
                         wb.SaveAs(svd.FileName + ".xlsx");
 
                         this.ControlBox = false;
 
-                        MessageBox.Show("File :" + svd.FileName+".xlsx" + " successfully saved!");
+                        MessageBox.Show("File :" + svd.FileName + ".xlsx successfully saved!");
+
+                        if (MessageBox.Show("Do you want to view the Excel file?", "Excel file has been created", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        {
+
+                            System.Diagnostics.Process.Start(svd.FileName + ".xlsx");
+                        }
 
                         export_as.Enabled = true;
 
@@ -219,6 +238,9 @@ namespace mt940_configuration
                
             }
 
+                export_as.Enabled = true;
+           
+
 
         }
         private void mt_home_Load(object sender, EventArgs e)
@@ -229,7 +251,7 @@ namespace mt940_configuration
             tablayout.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tablayout.Width, tablayout.Height, 40, 40));
             //grid_row_delete.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, grid_row_delete.Width, grid_row_delete.Height, 20, 20));
             //recover_del.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, recover_del.Width, recover_del.Height, 20, 20));
-
+            
 
             export_as.Enabled = false;
             recover_del.Enabled = false;
@@ -249,9 +271,7 @@ namespace mt940_configuration
 
             dialog.Filter = "Text files | *.txt"; // file types, that will be allowed to upload
             dialog.Multiselect = false;
-
-          
-            
+                                 
 
             if (dialog.ShowDialog() == DialogResult.OK) // if user clicked OK
             {
@@ -260,8 +280,10 @@ namespace mt940_configuration
 
                 StreamReader sr = new StreamReader(fpath);
                 string data = sr.ReadToEnd();
-               
+
                 sr.Close();
+
+
 
                 StreamWriter wr = new StreamWriter("mt_940.txt");
 
@@ -292,10 +314,12 @@ namespace mt940_configuration
                     PyScope scope = Py.CreateScope();
 
                     scope.Exec(File.ReadAllText("parse_st.py"));
+               
 
-                
+                                                    
                 }
                 mt_dataGrid.DataSource = ReadCsvFile("mt_in_csv.csv");
+               
 
 
             }
@@ -356,7 +380,7 @@ namespace mt940_configuration
 
                 }
             }
-            export_as.Enabled = false;
+            //export_as.Enabled = false;
         }
 
         private void cancel_request_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -113,7 +113,7 @@ namespace mt940_configuration
             this.link.AutoSize = true;
             this.link.BackColor = System.Drawing.Color.White;
             this.link.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.link.Location = new System.Drawing.Point(164, 327);
+            this.link.Location = new System.Drawing.Point(159, 327);
             this.link.Name = "link";
             this.link.Size = new System.Drawing.Size(35, 14);
             this.link.TabIndex = 5;
@@ -141,7 +141,7 @@ namespace mt940_configuration
             this.cancel.AutoSize = true;
             this.cancel.BackColor = System.Drawing.Color.Transparent;
             this.cancel.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel.Location = new System.Drawing.Point(157, 359);
+            this.cancel.Location = new System.Drawing.Point(152, 359);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(49, 14);
             this.cancel.TabIndex = 7;
@@ -157,7 +157,7 @@ namespace mt940_configuration
             this.export_as.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.export_as.ForeColor = System.Drawing.Color.Green;
             this.export_as.FormattingEnabled = true;
-            this.export_as.Location = new System.Drawing.Point(11, 421);
+            this.export_as.Location = new System.Drawing.Point(8, 421);
             this.export_as.Name = "export_as";
             this.export_as.Size = new System.Drawing.Size(201, 45);
             this.export_as.TabIndex = 18;
@@ -182,7 +182,7 @@ namespace mt940_configuration
             this.cancel_request.AutoSize = true;
             this.cancel_request.BackColor = System.Drawing.Color.Transparent;
             this.cancel_request.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel_request.Location = new System.Drawing.Point(157, 285);
+            this.cancel_request.Location = new System.Drawing.Point(152, 285);
             this.cancel_request.Name = "cancel_request";
             this.cancel_request.Size = new System.Drawing.Size(49, 14);
             this.cancel_request.TabIndex = 22;
@@ -205,7 +205,7 @@ namespace mt940_configuration
             this.mt_panel.Controls.Add(this.mt_image);
             this.mt_panel.Location = new System.Drawing.Point(61, 39);
             this.mt_panel.Name = "mt_panel";
-            this.mt_panel.Size = new System.Drawing.Size(222, 610);
+            this.mt_panel.Size = new System.Drawing.Size(217, 596);
             this.mt_panel.TabIndex = 0;
             // 
             // grid_row_delete
@@ -215,7 +215,7 @@ namespace mt940_configuration
             this.grid_row_delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.grid_row_delete.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grid_row_delete.ForeColor = System.Drawing.Color.Maroon;
-            this.grid_row_delete.Location = new System.Drawing.Point(265, 5);
+            this.grid_row_delete.Location = new System.Drawing.Point(256, 5);
             this.grid_row_delete.Name = "grid_row_delete";
             this.grid_row_delete.Size = new System.Drawing.Size(206, 49);
             this.grid_row_delete.TabIndex = 6;
@@ -231,7 +231,7 @@ namespace mt940_configuration
             this.review.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.review.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.review.ForeColor = System.Drawing.Color.Green;
-            this.review.Location = new System.Drawing.Point(310, 508);
+            this.review.Location = new System.Drawing.Point(316, 494);
             this.review.Name = "review";
             this.review.Size = new System.Drawing.Size(355, 29);
             this.review.TabIndex = 5;
@@ -245,7 +245,7 @@ namespace mt940_configuration
             this.mt_dataGrid.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mt_dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.mt_dataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.mt_dataGrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.mt_dataGrid.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -266,10 +266,10 @@ namespace mt940_configuration
             this.mt_dataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.mt_dataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.mt_dataGrid.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.mt_dataGrid.Location = new System.Drawing.Point(64, 27);
+            this.mt_dataGrid.Location = new System.Drawing.Point(34, 20);
             this.mt_dataGrid.Name = "mt_dataGrid";
             this.mt_dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.mt_dataGrid.Size = new System.Drawing.Size(847, 450);
+            this.mt_dataGrid.Size = new System.Drawing.Size(920, 450);
             this.mt_dataGrid.TabIndex = 0;
             this.mt_dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mt_dataGrid_CellContentClick);
             this.mt_dataGrid.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.mt_dataGrid_UserDeletingRow);
@@ -279,26 +279,26 @@ namespace mt940_configuration
             this.tablayout.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tablayout.ColumnCount = 1;
             this.tablayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tablayout.Controls.Add(this.mt_dataGrid, 0, 0);
             this.tablayout.Controls.Add(this.review, 0, 1);
             this.tablayout.Controls.Add(this.panel1, 0, 2);
-            this.tablayout.Location = new System.Drawing.Point(305, 40);
+            this.tablayout.Controls.Add(this.mt_dataGrid, 0, 0);
+            this.tablayout.Location = new System.Drawing.Point(304, 39);
             this.tablayout.Name = "tablayout";
             this.tablayout.RowCount = 3;
             this.tablayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tablayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tablayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tablayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tablayout.Size = new System.Drawing.Size(975, 610);
+            this.tablayout.Size = new System.Drawing.Size(988, 596);
             this.tablayout.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.recover_del);
             this.panel1.Controls.Add(this.grid_row_delete);
-            this.panel1.Location = new System.Drawing.Point(3, 542);
+            this.panel1.Location = new System.Drawing.Point(3, 528);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(969, 65);
+            this.panel1.Size = new System.Drawing.Size(982, 65);
             this.panel1.TabIndex = 6;
             // 
             // recover_del
@@ -308,7 +308,7 @@ namespace mt940_configuration
             this.recover_del.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.recover_del.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recover_del.ForeColor = System.Drawing.Color.Green;
-            this.recover_del.Location = new System.Drawing.Point(497, 5);
+            this.recover_del.Location = new System.Drawing.Point(488, 5);
             this.recover_del.Name = "recover_del";
             this.recover_del.Size = new System.Drawing.Size(206, 49);
             this.recover_del.TabIndex = 8;
