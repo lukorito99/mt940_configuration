@@ -185,7 +185,7 @@ namespace mt940_configuration
                         XLWorkbook wb = new XLWorkbook();
 
                         wb.Worksheets.Add((DataTable)mt_dataGrid.DataSource, "STATEMENT");
-                        wb.SaveAs(svd.FileName);
+                        wb.SaveAs(svd.FileName + ".xlsx");
 
                         MessageBox.Show("File :" + svd.FileName + " successfully saved!");
                     }
