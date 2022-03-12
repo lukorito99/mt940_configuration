@@ -1,3 +1,6 @@
+
+
+
 # .NET Desktop
 # Build and run tests for .NET Desktop or Windows classic desktop solutions.
 # Add steps that publish symbols, save build artifacts, and more:
@@ -11,11 +14,11 @@ pool:
 
 variables:
   solution: '**/*.sln'
-  buildPlatform: 'x64'
-  buildConfiguration: 'Debug'
+  buildPlatform: 'Debug'
+  buildConfiguration: 'x64'
 
 steps:
-- task: NuGetToolInstaller@1
+- task: NuGetToolInstaller@0
 
 - task: NuGetCommand@2
   inputs:
@@ -31,3 +34,18 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'mt940_configuration\\bin\\Debug'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+
+
