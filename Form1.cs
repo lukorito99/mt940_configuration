@@ -277,18 +277,24 @@ namespace mt940_configuration
             {
 
                 string fpath = dialog.FileName; // get name of file
+                string data = " ";
+                using (StreamReader sr = new StreamReader(fpath))
+                {
+                    data = sr.ReadToEnd();
 
-                StreamReader sr = new StreamReader(fpath);
-                string data = sr.ReadToEnd();
-
-                sr.Close();
-
+                }
+                   
+                
 
 
-                StreamWriter wr = new StreamWriter("mt_940.txt");
+                using (StreamWriter wr = new StreamWriter("mt_940.txt"))
+                {
+                    wr.Write(data);
+                  
+                }
+                    
 
-                wr.Write(data);
-                wr.Close();
+                
 
                 //var pathToVirtualEnv = @"C:\Users\..\mt940_configuration";
 
@@ -297,7 +303,7 @@ namespace mt940_configuration
                 //path = string.IsNullOrEmpty(path) ? pathToVirtualEnv : path + ";" + pathToVirtualEnv;
                 //Environment.SetEnvironmentVariable("PATH", path, EnvironmentVariableTarget.Process);
                 
-                //Environment.SetEnvironmentVariable("PYTHONHOME", pathToVirtualEnv, EnvironmentVariableTarget.Process);
+                ////Environment.SetEnvironmentVariable("PYTHONHOME", pathToVirtualEnv, EnvironmentVariableTarget.Process);
                
                 //Environment.SetEnvironmentVariable("PYTHONPATH", $"{pathToVirtualEnv}\\Lib\\site-packages;{pathToVirtualEnv}\\Lib", EnvironmentVariableTarget.Process);
 
@@ -307,21 +313,25 @@ namespace mt940_configuration
 
                 
                 grid_row_delete.Enabled = true;
-
                
+                string parsing_script = File.ReadAllText("parse_st.py");
                 using (Py.GIL())
                 {
-                    PyScope scope = Py.CreateScope();
+                    using (PyScope scope = Py.CreateScope())
+                    {
+                        scope.Exec(parsing_script);
+                    }
+                        
 
-                    scope.Exec(File.ReadAllText("parse_st.py"));
-               
-
-                                                    
                 }
                 mt_dataGrid.DataSource = ReadCsvFile("mt_in_csv.csv");
                
 
 
+            }
+            else
+            {
+                link.Enabled = false;
             }
 
         }

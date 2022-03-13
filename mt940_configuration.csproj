@@ -12,7 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Melvin Wepukhulu\Desktop\Changes\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,10 +23,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -93,6 +94,18 @@
   <PropertyGroup>
     <StartupObject>
     </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7CD71AB5B526600396F13C6F0EE24B1368F36CA9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>mt940_configuration_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -206,8 +219,8 @@
     <Reference Include="Python.Included, Version=3.7.3.13, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Python.Included.3.7.3.13\lib\netstandard2.0\Python.Included.dll</HintPath>
     </Reference>
-    <Reference Include="Python.Runtime, Version=2.5.1.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>packages\pythonnet_netstandard_py37_win.2.5.1\lib\netstandard2.0\Python.Runtime.dll</HintPath>
+    <Reference Include="Python.Runtime, Version=2.5.2.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>packages\pythonnet_netstandard_py37_win.2.5.2\lib\netstandard2.0\Python.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Raptorious.SharpMt940Lib, Version=1.2.0.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Raptorious.Finance.Swift.Mt940.1.2.0.4\lib\Raptorious.SharpMt940Lib.dll</HintPath>
@@ -351,6 +364,7 @@
     <None Include="fonts\Roboto Serif\RobotoSerif-BoldItalic.ttf" />
     <None Include="fonts\Roboto Serif\RobotoSerif-Italic.ttf" />
     <None Include="fonts\Roboto Serif\RobotoSerif-Regular.ttf" />
+    <None Include="mt940_configuration_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -369,6 +383,9 @@
     <Content Include="fonts\Lato\OFL.txt" />
     <Content Include="fonts\montserrat\OFL.txt" />
     <EmbeddedResource Include="full_table.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="parse_mt.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <Content Include="pdf_style.css" />

@@ -13,7 +13,7 @@ def pass_to_db():
     return details
 
    
-with open('mt_940.txt',"r") as f:
+with open('mt_940.txt') as f:
     data = f.read()
 
 transactions=mt940.parse(data)
@@ -39,6 +39,8 @@ del transaction_data_one_set
       
 col_names = list(df.columns)
 for i in col_names:
+    if pd.core.dtypes.common.is_datetime_or_timedelta_dtype(df[i]) == True:
+        df[i] = df[i].apply(lambda x: x.date())
     if i.find('_') != -1:
         col_names[col_names.index(i)]=i.replace('_',' ')
 
