@@ -313,10 +313,12 @@ namespace mt940_configuration
                 {
                     PyScope scope = Py.CreateScope();
 
-                    scope.Exec(File.ReadAllText("parse_st.py"));
-               
 
-                                                    
+
+                    scope.Exec(File.ReadAllText("parse_st.py"));
+
+
+
                 }
                 mt_dataGrid.DataSource = ReadCsvFile("mt_in_csv.csv");
                

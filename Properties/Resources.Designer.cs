@@ -69,16 +69,5 @@ namespace mt940_configuration.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ,status,funds code,amount,id,customer reference,bank reference,extra details,currency,date,entry date,guessed entry date,transaction details,final closing balance,available balance
-        ///1,Debit,None,-298.01 USD,NTRF,434433,None,,USD,2021-07-03,2021-07-03,2021-07-03,PAIEMENT PENSION ALIMENTAIRE JUIN 2021,Currently Not Applicable,Currently Not Applicable
-        ///2,Debit,None,-4930 USD,NTRF,434661,None,,USD,2021-07-03,2021-07-03,2021-07-03,OV13100675 PAIEMENT FACTURE JA00132021,Currently Not Applicable,Currently Not Appl [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string mt_try {
-            get {
-                return ResourceManager.GetString("mt_try", resourceCulture);
-            }
-        }
     }
 }
