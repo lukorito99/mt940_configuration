@@ -25,10 +25,9 @@ def mt_extract():
         ],
     ))
 
-  
-    with open('mt_940.txt','r') as f:
-           data = f.read()
-                      
+    with open('mt_940.txt',"r") as f:
+        data = f.read()
+
     transactions.parse(data)
     transaction_data_one_set = dict()
     count = 0
