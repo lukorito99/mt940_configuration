@@ -317,12 +317,12 @@ namespace mt940_configuration
                 string parsing_script = File.ReadAllText("parse_st.py");
                 using (Py.GIL())
                 {
-                    using (PyScope scope = Py.CreateScope())
-                    {
-                        scope.Exec(parsing_script);
-                    }
-                        
+                    PyScope scope = Py.CreateScope();
 
+                    scope.Exec(File.ReadAllText("parse_st.py"));
+               
+
+                                                    
                 }
                 mt_dataGrid.DataSource = ReadCsvFile("mt_in_csv.csv");
                

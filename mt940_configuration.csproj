@@ -382,6 +382,7 @@
   <ItemGroup>
     <Content Include="fonts\Lato\OFL.txt" />
     <Content Include="fonts\montserrat\OFL.txt" />
+    <None Include="Resources\mt_parsing.py.txt" />
     <EmbeddedResource Include="full_table.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
