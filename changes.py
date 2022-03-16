@@ -2,11 +2,8 @@
 
 df = pd.read_csv('mt_with_possible_changes.csv')
 
-
-df = df.apply(lambda z: pd.Series(z.dropna().values))
-
 df.fillna(' ', inplace=True)
-
+df = df.apply(lambda g: pd.Series(g.dropna().values))
 
 x = df.to_html()
 

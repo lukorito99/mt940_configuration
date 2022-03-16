@@ -12,11 +12,18 @@ def pass_to_db():
 
     return details
 
-   
+
+mt940.tags.BalanceBase.scope = mt940.models.Transaction
+transactions = mt940.models.Transactions(processors=dict(
+       pre_statement=[
+           mt940.processors.add_currency_pre_processor(' '),
+       ],
+   ))
+
 with open('mt_940.txt',"r") as f:
     data = f.read()
 
-transactions=mt940.parse(data)
+transactions.parse(data)
 transaction_data_one_set = dict()
 
 count = 0
@@ -61,6 +68,7 @@ df.columns = col_names
 
 del count
 del col_names
+
 
 df.to_csv('mt_in_csv.csv',index=False)
 
